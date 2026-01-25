@@ -6,10 +6,10 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 min-h-[85vh] items-center">
         
         {/* Text Content */}
-        <div className="flex flex-col justify-center text-center md:text-left font-labrada py-20 md:py-28">
+        <div className="flex flex-col justify-center text-center md:text-left  py-20 md:py-28">
           
           {/* Top Label */}
-          <div className="flex items-center justify-center md:justify-start gap-3 mb-5">
+          <div className="flex items-center font-labrada justify-center md:justify-start gap-3 mb-1">
             <span className="h-[3px] w-8 bg-orange-500" />
 
             <h2 className="text-lg md:text-xl font-semibold tracking-wide">
@@ -21,18 +21,18 @@ export default function Hero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-6xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          <h1 className="text-3xl font-labrada sm:text-6xl md:text-5xl font-extrabold text-gray-900 leading-tight">
             Comfort your home <br />
             <span className="text-orange-500">with Medclover</span>
           </h1>
 
           {/* Description */}
-          <p className="mt-6 text-gray-600 text-base sm:text-lg max-w-xl mx-auto md:mx-0">
+          <p className="mt-6 font-labrada text-gray-600 text-base sm:text-lg max-w-xl mx-auto md:mx-0">
             Medclover Medical delivers trusted healthcare in the comfort of your home.
             We provide compassionate, primary care that fits your lifestyle.
           </p>
 
-          <p className="mt-3 text-gray-600 text-base sm:text-lg">
+          <p className="mt-3 font-labrada text-gray-600 text-base sm:text-lg">
             Affordable. Accessible. Always patient-focused.
           </p>
 

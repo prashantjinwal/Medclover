@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
-:root {
+.font-labrada {
   font-family: var(--font-labrada);
 }
