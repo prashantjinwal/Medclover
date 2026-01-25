@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-14 sm:py-20 px-4 sm:px-6 bg-orange-50 font-labrada">
+    <section className="py-14 sm:py-20 px-4 sm:px-6 bg-white font-labrada">
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
@@ -14,6 +14,10 @@ export default function WhyChooseUs() {
           <h2 className="text-3xl sm:text-5xl font-semibold text-orange-500 mt-2">
             Why Choose us ?
           </h2>
+          <div className="flex justify-center mt-4">
+            <span className="w-10 sm:w-12 h-[3px] bg-orange-500 rounded-full mr-2"></span>
+            <span className="w-10 sm:w-12 h-[3px] bg-blue-900 rounded-full"></span>
+          </div>
         </div>
 
         {/* Content */}

@@ -18,7 +18,12 @@ export default function Services() {
 
         <h2 className="text-4xl font-labrada text-black font-semibold text-center mb-12  ">
           Our Services
+          <div className="flex justify-center mt-4">
+            <span className="w-10 sm:w-12 h-[3px] bg-orange-500 rounded-full mr-2"></span>
+            <span className="w-10 sm:w-12 h-[3px] bg-blue-900 rounded-full"></span>
+          </div>
         </h2>
+        
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
@@ -35,7 +40,7 @@ export default function Services() {
                 />
               </div>
 
-              {/* BLUE OVERLAP (PARTLY OUTSIDE ORANGE) */}
+              
               <div
                 className="
                   absolute
@@ -50,7 +55,7 @@ export default function Services() {
                   shadow-lg
                 "
               >
-                <h3 className="text-white font-semibold text-lg mb-4 leading-snug">
+                <h3 className="text-white font-semibold text-lg xl:text-md mb-4 leading-snug px-1">
                   {service.title}
                 </h3>
 

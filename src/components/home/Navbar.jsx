@@ -27,17 +27,19 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div>
+    <div >
       {/* Top Bar */}
       <div className="bg-[#132158] text-white text-sm px-6 py-2">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           
-          {/* Phone */}
+          
           <div className="flex gap-4">
-            <p>+91 98548 94490</p>
+            <p  >+91 88262 28159</p>
+            <p className=" hidden md:block "> | </p>
+            <p className=" hidden md:block " >medcloversolutions@gmail.com</p>
           </div>
 
-          {/* Social Icons */}
+          
           <div className="flex items-center gap-3">
             <span className="hidden md:block">Follow us</span>
             <Twitter className="w-4 h-4 cursor-pointer hover:text-orange-400" />
@@ -49,11 +51,11 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Main Navbar */}
+      
       <nav className="w-full bg-white shadow-md px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
-          {/* Logo */}
+          
           <Image
             src="/images/Logo.png"
             alt="logo"

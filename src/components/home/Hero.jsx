@@ -5,10 +5,10 @@ export default function Hero() {
     <section className="bg-white px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 min-h-[85vh] items-center">
         
-        {/* Text Content */}
+        
         <div className="flex flex-col justify-center text-center md:text-left  py-20 md:py-28">
           
-          {/* Top Label */}
+          
           <div className="flex items-center font-labrada justify-center md:justify-start gap-3 mb-1">
             <span className="h-[3px] w-8 bg-orange-500" />
 
@@ -20,13 +20,12 @@ export default function Hero() {
             <span className="h-[3px] w-8 bg-blue-900" />
           </div>
 
-          {/* Main Heading */}
           <h1 className="text-3xl font-labrada sm:text-6xl md:text-5xl font-extrabold text-gray-900 leading-tight">
             Comfort your home <br />
             <span className="text-orange-500">with Medclover</span>
           </h1>
 
-          {/* Description */}
+          
           <p className="mt-6 font-labrada text-gray-600 text-base sm:text-lg max-w-xl mx-auto md:mx-0">
             Medclover Medical delivers trusted healthcare in the comfort of your home.
             We provide compassionate, primary care that fits your lifestyle.
@@ -36,7 +35,7 @@ export default function Hero() {
             Affordable. Accessible. Always patient-focused.
           </p>
 
-          {/* CTA */}
+          
           <div className="mt-10">
             <button className="bg-blue-900 text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-blue-800 transition shadow-lg">
               Book Now
@@ -44,7 +43,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Image Section */}
+        
         <div className="flex items-end justify-center md:justify-end">
           <Image
             src="/images/Hero.png"
