@@ -5,7 +5,7 @@ export default function WhyChooseUs() {
     <section className="py-14 sm:py-20 px-4 sm:px-6 bg-white font-labrada">
       <div className="max-w-7xl mx-auto">
 
-        {/* Heading */}
+        
         <div className="text-center mb-8 sm:mb-12">
           <p className="text-sm sm:text-xl tracking-widest text-gray-500 uppercase">
             why us
@@ -20,10 +20,10 @@ export default function WhyChooseUs() {
           </div>
         </div>
 
-        {/* Content */}
+       
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
 
-          {/* IMAGE (mobile pe upar) */}
+          
           <div className="flex justify-center order-1 lg:order-2">
             <Image
               src="/images/doctorshahb.png"
@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
             />
           </div>
 
-          {/* TEXT */}
+          
           <div className="order-2 lg:order-1 text-gray-700 text-base sm:text-lg lg:text-2xl leading-relaxed text-center lg:text-left">
             <p>
               MedClover Solutions Pvt Ltd is trusted for delivering trained and

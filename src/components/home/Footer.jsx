@@ -3,10 +3,10 @@ export default function Footer() {
     <footer className="bg-[#162A63] text-gray-200 pt-14">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Top Grid */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-          {/* About Us */}
+          
           <div>
             <h3 className="text-lg font-semibold mb-4 relative inline-block">
               About us
@@ -22,7 +22,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links */}
+          
           <div className="hidden md:block">
             <h3 className="text-lg font-semibold mb-4 relative inline-block">
               Quick Links
@@ -38,7 +38,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Our Services */}
+         
           <div>
             <h3 className="text-lg font-semibold mb-4 relative inline-block">
               Our services
@@ -52,7 +52,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          
           <div>
             <h3 className="text-lg font-semibold mb-4 relative inline-block">
               Contact
@@ -73,10 +73,10 @@ export default function Footer() {
 
         </div>
 
-        {/* Divider */}
+        
         <div className="border-t border-orange-400 mt-12"></div>
 
-        {/* Bottom Section */}
+        
         <div className="py-6 text-sm text-gray-300 flex flex-col md:flex-row md:justify-between gap-4">
           <p>
             Privacy Policy | Terms and Conditions | patient Right & Responsibilities

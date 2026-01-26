@@ -29,7 +29,6 @@ export default function Services() {
           {services.map((service, index) => (
             <div key={index} className="relative">
 
-              {/* ORANGE BASE */}
               <div className="bg-[#FFF1E3] rounded-2xl pt-10 pb-5  flex justify-center m-5">
                 <Image
                   src={service.image}

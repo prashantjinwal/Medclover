@@ -2,9 +2,9 @@ export default function AboutSection() {
   return (
     <section className="w-full">
 
-      {/* ABOUT US */}
+      
       <div className="max-w-5xl mx-auto px-6 py-16 text-center">
-        <h2 className="text-2xl md:text-4xl font-lan font-medium mb-6 font-labrada">
+        <h2 className="text-2xl md:text-5xl font-lan font-medium mb-6 font-labrada">
           About <span className="text-orange-500">us</span> 
         </h2>
 
@@ -21,7 +21,7 @@ export default function AboutSection() {
         </p>
       </div>
 
-      {/* WHAT WE DO */}
+      
       <div className="bg-[#FDECD8]">
         <div className="max-w-5xl mx-auto px-6 py-14">
           <h3 className="text-xl md:text-2xl font-medium mb-4">
@@ -48,13 +48,13 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* VISION & MISSION */}
+      
       <div className="max-w-5xl mx-auto px-6 py-20">
         <div className="flex flex-col md:flex-row justify-center gap-8">
 
-          {/* Vision */}
+          
           <div className="bg-[#fe9606] text-white rounded-xl w-full md:w-[280px] p-8 text-center shadow-md">
-            <h4 className="text-lg font-semibold mb-4 tracking-wide">
+            <h4 className="text-xl font-semibold mb-4 tracking-wide">
               OUR VISION
             </h4>
             <p className="text-sm leading-relaxed">
@@ -63,9 +63,9 @@ export default function AboutSection() {
             </p>
           </div>
 
-          {/* Mission */}
+          
           <div className="bg-[#162A63] text-white rounded-xl w-full md:w-[280px] p-8 text-center shadow-md">
-            <h4 className="text-lg font-semibold mb-4 tracking-wide">
+            <h4 className="text-xl font-semibold mb-4 tracking-wide">
               OUR MISSION
             </h4>
             <p className="text-sm leading-relaxed">

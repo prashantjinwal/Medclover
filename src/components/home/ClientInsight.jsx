@@ -53,7 +53,7 @@ export default function ClientInsight() {
           </div>
         </div>
 
-        {/* MOBILE  */}
+        
         <div className="relative md:hidden overflow-hidden">
           <div
             className="flex transition-transform duration-500 ease-in-out"
@@ -104,7 +104,7 @@ export default function ClientInsight() {
           </button>
         </div>
 
-        {/* DESKTOP  */}
+        
         <div className="hidden md:grid grid-cols-3 gap-8">
           {cards.map((card, i) => (
             <div

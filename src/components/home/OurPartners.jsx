@@ -14,7 +14,7 @@ export default function OurPartners() {
     <section className="w-full bg-white py-26 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Heading */}<div className="text-center mb-14">
+        <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-semibold font-labrada ">
             <span className="text-orange-500">Our</span>{" "}
             <span className="text-black">Partners</span>
