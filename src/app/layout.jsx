@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "../components/home/Navbar.jsx"
+import Footer from "../components/home/Footer.jsx"
 import { Labrada } from 'next/font/google'
 
 
@@ -20,7 +21,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         {children}
-        
+        <Footer/>
       </body>
     </html>
   );

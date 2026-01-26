@@ -44,7 +44,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="w-full bg-white py-20">
+    <section className="w-full bg-white py-20 md:mb-18 mb-8 ">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
 
         {/* Heading */}

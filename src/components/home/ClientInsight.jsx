@@ -37,7 +37,7 @@ export default function ClientInsight() {
     <section className="w-full bg-[#FDECD7] py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-        {/* Heading */}
+        
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold font-labrada">
             Client <span className="text-blue-800">Insight</span>
@@ -53,7 +53,7 @@ export default function ClientInsight() {
           </div>
         </div>
 
-        {/* ===== MOBILE SLIDER ===== */}
+        {/* MOBILE  */}
         <div className="relative md:hidden overflow-hidden">
           <div
             className="flex transition-transform duration-500 ease-in-out"
@@ -88,7 +88,7 @@ export default function ClientInsight() {
             ))}
           </div>
 
-          {/* Arrows */}
+          
           <button
             onClick={prev}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full"
@@ -104,7 +104,7 @@ export default function ClientInsight() {
           </button>
         </div>
 
-        {/* ===== DESKTOP GRID ===== */}
+        {/* DESKTOP  */}
         <div className="hidden md:grid grid-cols-3 gap-8">
           {cards.map((card, i) => (
             <div
