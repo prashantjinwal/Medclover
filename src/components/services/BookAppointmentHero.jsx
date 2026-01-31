@@ -1,7 +1,9 @@
 "use client";
+import Card from "../home/Cardfunc"
 
 export default function BookAppointmentHero() {
   return (
+    <>
     <section
       className="
         relative
@@ -96,9 +98,13 @@ export default function BookAppointmentHero() {
           </button>
         </form>
       </div>
-
-
-
+   
     </section>
+       {/*card  */}
+      <div className="py-20 md:px-15 px-5">
+        <Card/>
+
+      </div>
+    </>
   );
 }

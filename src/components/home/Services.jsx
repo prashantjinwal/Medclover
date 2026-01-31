@@ -1,12 +1,5 @@
-import Image from "next/image";
+import Card from './Cardfunc'
 
-const services = [
-  { title: "Hospital Staff Support", image: "/images/card1.png" },
-  { title: "Home Health & Elderly Care", image: "/images/card1.png" },
-  { title: "Critical & Specialized Nursing", image: "/images/card1.png" },
-  { title: "Training & Skill Development", image: "/images/card1.png" },
-  { title: "Placement & Staffing Consultation", image: "/images/card1.png" },
-];
 
 export default function Services() {
   return (
@@ -25,47 +18,9 @@ export default function Services() {
         </h2>
         
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {services.map((service, index) => (
-            <div key={index} className="relative">
-
-              <div className="bg-[#FFF1E3] rounded-2xl pt-10 pb-5  flex justify-center m-5">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  width={220}
-                  height={180}
-                  className="object-contain"
-                />
-              </div>
-
-              
-              <div
-                className="
-                  absolute
-                  left-1/2
-                  -translate-x-1/2
-                  bottom-[-32px]
-                  bg-[#14235C]
-                  w-[78%]
-                  rounded-2xl
-                  text-center
-                  py-6
-                  shadow-lg
-                "
-              >
-                <h3 className="text-white font-semibold text-lg xl:text-md mb-4 leading-snug px-1">
-                  {service.title}
-                </h3>
-
-                <button className="bg-orange-500 text-white text-sm px-5 py-1.5 rounded-full hover:bg-orange-600 ">
-                  Book Now
-                </button>
-              </div>
-
-            </div>
-          ))}
-        </div>
+        
+          <Card/>
+        
       </div>
     </section>
   );
