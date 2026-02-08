@@ -63,7 +63,7 @@ export default function CardCarousel() {
             className="relative min-w-[300px] flex-shrink-0"
           >
             
-            <div className="bg-[#FFF1E3] rounded-2xl pt-10 pb-5 flex justify-center lg:min-h-[300px]">
+            <div className="bg-[#FFF1E3] rounded-2xl  py-5 flex justify-center min-h-[300px]">
               <Image
                 src={service.image}
                 alt={service.title}

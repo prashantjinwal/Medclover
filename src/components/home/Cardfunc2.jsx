@@ -25,7 +25,7 @@ export default function CardGrid() {
             className="relative py-5"
           >
             {/* IMAGE CARD */}
-            <div className="bg-[#FFF1E3] rounded-2xl pt-10 pb-16 flex justify-center min-h-[300px]">
+            <div className="bg-[#FFF1E3] rounded-2xl  py-5 flex justify-center min-h-[300px]">
               <Image
                 src={service.image}
                 alt={service.title}

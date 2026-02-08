@@ -109,6 +109,7 @@ export default function PartnerWithUs (){
         <WhyPartner/>
       </div>
       <div>
+        
         <OurPartners/>
       </div>
     </>

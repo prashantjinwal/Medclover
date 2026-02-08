@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -37,14 +38,16 @@ export default function Hero() {
 
           
           <div className="mt-10">
+            <Link key="contact" href="/contact">
             <button className="bg-blue-900 text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-blue-800 transition shadow-lg">
               Book Now
             </button>
+            </Link>
           </div>
         </div>
 
         
-        <div className="flex items-end justify-center md:justify-end">
+        <div className="md:flex items-end justify-center md:justify-end hidden">
           <Image
             src="/images/Hero.png"
             alt="Healthcare at Home"

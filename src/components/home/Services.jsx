@@ -1,5 +1,6 @@
 import Card from './Cardfunc'
-
+import { MoveRight } from 'lucide-react';
+import Link from "next/link";
 
 export default function Services() {
   return (
@@ -17,9 +18,11 @@ export default function Services() {
           </div>
         </h2>
         
-
-        
+      <Link key="services" href="/services">
+        <p className='text-right text-xl flex justify-end font-labrada hover:text-orange-400'> See all &nbsp; <span className='flex justify-center items-center'>  <MoveRight /></span></p>
+      </Link>
           <Card/>
+          
         
       </div>
     </section>
