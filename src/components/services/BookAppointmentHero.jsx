@@ -1,5 +1,5 @@
 "use client";
-import Card from "../home/Cardfunc"
+import Card from "../home/Cardfunc2"
 
 export default function BookAppointmentHero() {
   return (
@@ -101,7 +101,7 @@ export default function BookAppointmentHero() {
    
     </section>
        {/*card  */}
-      <div className="py-20 md:px-15 px-5">
+      <div className="py-18 md:px-15 px-5">
         <Card/>
 
       </div>

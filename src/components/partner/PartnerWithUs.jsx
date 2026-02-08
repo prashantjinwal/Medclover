@@ -1,6 +1,9 @@
+import WhyPartner from "./Whypartner";
+import OurPartners from "../home/OurPartners"
 
 export default function PartnerWithUs (){
      return (
+      <>
      <section
       className="
         relative
@@ -98,6 +101,16 @@ export default function PartnerWithUs (){
           </button>
         </form>
       </div>
+
    </section>
+
+      <div>
+        {/* Why partner */}
+        <WhyPartner/>
+      </div>
+      <div>
+        <OurPartners/>
+      </div>
+    </>
      );
 }

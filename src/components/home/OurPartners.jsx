@@ -2,25 +2,25 @@ import Image from "next/image";
 
 const partners = [
   { src: "/images/partnerlogo/logo1.png", alt: "Apollo Hospitals" },
-  { src: "/images/partnerlogo/logo1.png", alt: "Portea Health Care" },
-  { src: "/images/partnerlogo/logo1.png", alt: "Blessings 360" },
-  { src: "/images/partnerlogo/logo1.png", alt: "Epoch Care" },
-  { src: "/images/partnerlogo/logo1.png", alt: "Sarvodaya Healthcare" },
-  { src: "/images/partnerlogo/logo1.png", alt: "Housepital" },
+  { src: "/images/partnerlogo/logo2.png", alt: "Portea Health Care" },
+  { src: "/images/partnerlogo/logo3.png", alt: "Blessings 360" },
+  { src: "/images/partnerlogo/logo4.png", alt: "Epoch Care" },
+  { src: "/images/partnerlogo/logo5.png", alt: "Sarvodaya Healthcare" },
+  { src: "/images/partnerlogo/logo6.png", alt: "Housepital" },
 ];
 
 export default function OurPartners() {
   return (
-    <section className="w-full bg-white py-26 overflow-hidden">
+    <section className="w-full bg-white md:py-26 py-30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-5xl font-semibold font-labrada ">
+          <h2 className="text-4xl md:text-5xl font-semibold font-labrada ">
             <span className="text-orange-500">Our</span>{" "}
             <span className="text-black">Partners</span>
           </h2>
 
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-xl md:text-base py-3 ">
+          <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-sm md:text-base py-3 ">
             We collaborate with hospitals and care providers to deliver skilled caregivers,
             dependable staffing, and quality care—ensuring comfort, safety, and continuity
             for every patient.

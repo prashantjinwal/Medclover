@@ -79,11 +79,12 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-
+          <Link key="contact" href="/contact">
             <button className="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition">
               <Phone size={18} />
               Contact Us
             </button>
+          </Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -112,11 +113,12 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-
+        <Link key="contact" href="/contact">
             <button className="w-full flex items-center justify-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-md">
               <Phone size={18} />
               Contact Us
             </button>
+        </Link>
           </div>
         )}
       </nav>
