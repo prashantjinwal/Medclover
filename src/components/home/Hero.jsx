@@ -115,7 +115,7 @@ export default function Hero() {
             width={1200}
             height={1200}
             priority
-            className="object-contain max-w-full md:max-w-[120%] md:translate-y-6"
+            className="hidden md:flex items-end justify-center md:justify-end"
           />
         </motion.div>
 
