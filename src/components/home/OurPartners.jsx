@@ -11,7 +11,7 @@ const partners = [
 
 export default function OurPartners() {
   return (
-    <section className="w-full bg-white md:py-20 py-25 overflow-hidden">
+    <section className="w-full bg-white md:py-20 py-18 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center mb-14">

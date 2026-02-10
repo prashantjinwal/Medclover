@@ -93,7 +93,7 @@ export default function PartnerWithUs() {
           </motion.p>
         </motion.div>
 
-        {/* Form Card */}
+
         <motion.div
           variants={fadeScale}
           initial="hidden"

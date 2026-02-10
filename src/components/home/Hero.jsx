@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-/* -------------------- ANIMATION VARIANTS -------------------- */
+
 
 const container = {
   hidden: {},
@@ -37,14 +37,14 @@ const imageVariant = {
 export default function Hero() {
   return (
     <section className="bg-white px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 min-h-[85vh] items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 min-h-[70vh] items-center">
 
-        {/* -------------------- LEFT CONTENT -------------------- */}
+
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex flex-col justify-center text-center md:text-left py-20 md:py-28"
+          className="flex flex-col justify-center text-center md:text-left py-20 md:py-25"
         >
 
           {/* Top label */}
@@ -102,7 +102,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* -------------------- RIGHT IMAGE -------------------- */}
+
         <motion.div
           variants={imageVariant}
           initial="hidden"

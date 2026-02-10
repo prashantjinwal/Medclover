@@ -7,7 +7,7 @@ export default function CardGrid() {
   return (
     <div className="py-16 px-4 max-w-7xl mx-auto ">
       
-      {/* GRID */}
+
       <div
         className="
           grid
@@ -24,7 +24,7 @@ export default function CardGrid() {
             key={index}
             className="relative py-5"
           >
-            {/* IMAGE CARD */}
+
             <div className="bg-[#FFF1E3] rounded-2xl  py-5 flex justify-center min-h-[300px]">
               <Image
                 src={service.image}
@@ -35,7 +35,7 @@ export default function CardGrid() {
               />
             </div>
 
-            {/* INFO CARD */}
+
             <div className="absolute left-1/2 -translate-x-1/2 bottom-[-32px] bg-[#14235C] w-[90%] rounded-2xl text-center py-6 shadow-lg">
               <h3 className="text-white font-semibold text-lg mb-4 leading-snug px-2">
                 {service.title}
