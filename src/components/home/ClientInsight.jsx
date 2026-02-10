@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const cards = [
   {
@@ -27,17 +28,42 @@ const cards = [
   },
 ];
 
+/* -------------------- ANIMATION VARIANTS -------------------- */
+
+const slideVariants = {
+  initial: { opacity: 0, x: 60, scale: 0.95 },
+  animate: { opacity: 1, x: 0, scale: 1 },
+  exit: { opacity: 0, x: -60, scale: 0.95 },
+};
+
+const gridContainer = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const gridItem = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
+
 export default function ClientInsight() {
   const [index, setIndex] = useState(1);
 
-  const prev = () => setIndex((prev) => (prev === 0 ? cards.length - 1 : prev - 1));
-  const next = () => setIndex((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
+  const prev = () =>
+    setIndex((prev) => (prev === 0 ? cards.length - 1 : prev - 1));
+
+  const next = () =>
+    setIndex((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
 
   return (
     <section className="w-full bg-[#FDECD7] py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-        
+        {/* -------------------- HEADER -------------------- */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold font-labrada">
             Client <span className="text-blue-800">Insight</span>
@@ -53,42 +79,45 @@ export default function ClientInsight() {
           </div>
         </div>
 
-        
+        {/* -------------------- MOBILE SLIDER -------------------- */}
         <div className="relative md:hidden overflow-hidden">
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${index * 100}%)` }}
-          >
-            {cards.map((card, i) => (
-              <div key={i} className="min-w-full px-2">
-                <div
-                  className={`rounded-2xl p-6 min-h-[340px] flex flex-col justify-between shadow-lg
-                    ${card.dark ? "bg-[#13245E] text-white" : "bg-white text-black"}
-                  `}
-                >
-                  <div>
-                    <h3 className="font-semibold text-base mb-4 text-center">
-                      {card.title}
-                    </h3>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              variants={slideVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.45, ease: "easeInOut" }}
+              className="px-2"
+            >
+              <div
+                className={`rounded-2xl p-6 min-h-[340px] flex flex-col justify-between shadow-lg
+                  ${cards[index].dark ? "bg-[#13245E] text-white" : "bg-white text-black"}
+                `}
+              >
+                <div>
+                  <h3 className="font-semibold text-base mb-4 text-center">
+                    {cards[index].title}
+                  </h3>
 
-                    <p
-                      className={`text-sm text-center leading-relaxed ${
-                        card.dark ? "text-blue-100" : "text-gray-600"
-                      }`}
-                    >
-                      {card.content}
-                    </p>
-                  </div>
-
-                  <p className="mt-5 text-sm font-medium text-center">
-                    {card.author}
+                  <p
+                    className={`text-sm text-center leading-relaxed ${
+                      cards[index].dark ? "text-blue-100" : "text-gray-600"
+                    }`}
+                  >
+                    {cards[index].content}
                   </p>
                 </div>
-              </div>
-            ))}
-          </div>
 
-          
+                <p className="mt-5 text-sm font-medium text-center">
+                  {cards[index].author}
+                </p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Arrows */}
           <button
             onClick={prev}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full"
@@ -104,11 +133,20 @@ export default function ClientInsight() {
           </button>
         </div>
 
-        
-        <div className="hidden md:grid grid-cols-3 gap-8">
+        {/* -------------------- DESKTOP GRID -------------------- */}
+        <motion.div
+          variants={gridContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="hidden md:grid grid-cols-3 gap-8"
+        >
           {cards.map((card, i) => (
-            <div
+            <motion.div
               key={i}
+              variants={gridItem}
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 200 }}
               className={`rounded-2xl p-8 min-h-[360px] flex flex-col justify-between shadow-lg
                 ${card.dark ? "bg-[#13245E] text-white" : "bg-white text-black"}
               `}
@@ -130,9 +168,9 @@ export default function ClientInsight() {
               <p className="mt-6 text-sm font-medium text-center">
                 {card.author}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>
