@@ -18,13 +18,13 @@ export default function CardCarousel() {
   const [cardWidth, setCardWidth] = useState(0);
   const [visibleCards, setVisibleCards] = useState(1);
 
-  /* -------------------- CALCULATE WIDTH -------------------- */
+  
   useEffect(() => {
     const updateSizes = () => {
       if (!containerRef.current) return;
 
       const containerWidth = containerRef.current.offsetWidth;
-      const singleCardWidth = 332; // 300 + gap(32)
+      const singleCardWidth = 332; 
 
       setCardWidth(singleCardWidth);
       setVisibleCards(Math.floor(containerWidth / singleCardWidth));
@@ -37,7 +37,7 @@ export default function CardCarousel() {
 
   const maxIndex = Math.max(total - visibleCards, 0);
 
-  /* -------------------- AUTO SLIDE -------------------- */
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
@@ -46,7 +46,7 @@ export default function CardCarousel() {
     return () => clearInterval(timer);
   }, [maxIndex]);
 
-  /* -------------------- PROGRESS BAR -------------------- */
+
   useEffect(() => {
     controls.set({ width: 0 });
     controls.start({
@@ -55,7 +55,7 @@ export default function CardCarousel() {
     });
   }, [current, controls]);
 
-  /* -------------------- CONTROLS -------------------- */
+
   const nextSlide = () => {
     setCurrent((prev) => Math.min(prev + 1, maxIndex));
   };
@@ -67,7 +67,6 @@ export default function CardCarousel() {
   return (
     <div ref={containerRef} className="relative overflow-hidden py-14">
 
-      {/* SLIDER */}
       <motion.div
         className="flex gap-8"
         animate={{ x: -(current * cardWidth) }}
@@ -101,17 +100,17 @@ export default function CardCarousel() {
         ))}
       </motion.div>
 
-      {/* PROGRESS BAR */}
+      
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[70%] h-1 bg-gray-300 rounded-full overflow-hidden">
         <motion.div className="h-full bg-orange-500" animate={controls} />
       </div>
 
-      {/* COUNTER */}
+      
       <div className="absolute bottom-6 right-6 bg-black/60 text-white text-xs px-3 py-1 rounded-full">
         {current + 1} / {maxIndex + 1}
       </div>
 
-      {/* ARROWS */}
+      
       <button
         onClick={prevSlide}
         disabled={current === 0}
