@@ -41,3 +41,5 @@ yarn-error.log*
 next-env.d.ts
 
 
+google-serivce-account.json
+my-app\src\app\lib\google-service-account.json
