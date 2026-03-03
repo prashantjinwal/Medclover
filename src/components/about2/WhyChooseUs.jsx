@@ -26,22 +26,22 @@ export default function WhyChooseUs() {
           
           <div className="flex justify-center order-1 lg:order-2">
             <Image
-              src="/images/doctorshahb.png"
+              src="/images/doctor.png"
               alt="Doctor"
               width={420}
               height={520}
               className="
                 object-contain
-                w-[260px]
-                sm:w-[340px]
-                lg:w-[420px]
+                w-[290px]
+                sm:w-[360px]
+                lg:w-[440px]
               "
               priority
             />
           </div>
 
           
-          <div className="order-2 lg:order-1 text-gray-700 text-base sm:text-lg lg:text-2xl leading-relaxed text-center lg:text-left">
+          <div className="order-2 lg:order-1 text-gray-700 text-base sm:text-lg lg:text-2xl leading-relaxed text-center lg:text-left mb-4">
             <p>
               MedClover Solutions Pvt Ltd is trusted for delivering trained and
               verified caregivers, reliable healthcare support, and a strong
