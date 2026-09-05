@@ -7,6 +7,10 @@ import { Labrada } from 'next/font/google'
 export const metadata = {
   title: "Medclover",
   description: "Provide solutions",
+  icons: {
+    icon: { url: "/images/logoWEB.png", type: "image/png" },
+    apple: "/images/logoWEB.png",
+  },
 };
 const labrada = Labrada({
   subsets: ["latin"],
