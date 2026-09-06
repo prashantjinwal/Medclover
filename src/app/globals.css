@@ -41,3 +41,7 @@
   focus:ring-2
   focus:ring-orange-200;
 }
+
+.input[aria-invalid="true"] {
+  @apply border-red-500 focus:border-red-500 focus:ring-red-100;
+}
