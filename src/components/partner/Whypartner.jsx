@@ -1,76 +1,86 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const features = [
   {
     title: "Expand Your Reach",
     description:
-      "Connect with a wider patient base through our digital healthcare platform and referral network.",
+      "Connect with more families, patients, and healthcare organizations through a growing care network.",
     icon: "/icons/reach.png",
   },
   {
-    title: "Technology-Driven Support",
+    title: "Coordinated Support",
     description:
-      "Benefit from streamlined appointment management, digital records, and efficient coordination.",
+      "Work with a responsive team focused on smoother communication, referrals, and service coordination.",
     icon: "/icons/technology.png",
   },
   {
-    title: "Trusted Brand Association",
+    title: "Trusted Association",
     description:
-      "Align with a healthcare brand known for transparency, reliability, and quality care.",
+      "Align with a healthcare partner committed to transparency, reliability, and high-quality care.",
     icon: "/icons/trust.png",
   },
   {
-    title: "Growth-Oriented Collaboration",
+    title: "Shared Growth",
     description:
-      "We believe in long-term partnerships that create mutual value and shared success.",
+      "Build a long-term collaboration designed to create mutual value and stronger patient outcomes.",
     icon: "/icons/growth.png",
   },
 ];
 
 export default function WhyPartner() {
   return (
-    <section className="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-16">
-      
-      {/* Heading */}
-      <h2 className="text-2xl sm:text-3xl font-bold mb-10 sm:mb-12">
-        Why Partner with <span className="text-black">MedClover?</span>
-      </h2>
+    <section className="bg-[#f7f9ff] px-5 py-20 sm:px-6 sm:py-24">
+      <div className="mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-500">
+            The Medclover advantage
+          </p>
+          <h2 className="mt-3 font-labrada text-3xl font-semibold text-[#14235C] sm:text-4xl lg:text-5xl">
+            Why partner with Medclover?
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl leading-7 text-gray-600">
+            We bring together healthcare expertise, dependable coordination,
+            and a people-first approach to help every partnership create lasting value.
+          </p>
+        </motion.div>
 
-      {/* Features */}
-      <div className="space-y-8 sm:space-y-10">
-        {features.map((item, index) => (
-          <div
-            key={index}
-            className="
-              flex
-              flex-row
-              items-start
-              gap-4
-              sm:gap-6
-            "
-          >
-            {/* Icon (ALWAYS LEFT) */}
-            <div className="flex-shrink-0">
-              <Image
-                src={item.icon}
-                alt={item.title}
-                width={56}
-                height={56}
-                className="object-contain"
-              />
-            </div>
-
-            {/* Text */}
-            <div>
-              <h3 className="text-base sm:text-lg font-semibold mb-1">
-                {item.title}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((feature, index) => (
+            <motion.article
+              key={feature.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
+              className="group rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-orange-100 hover:shadow-xl sm:p-7"
+            >
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 transition group-hover:bg-orange-100">
+                <Image
+                  src={feature.icon}
+                  alt=""
+                  width={34}
+                  height={34}
+                  className="h-8 w-8 object-contain"
+                />
+              </span>
+              <h3 className="mt-6 text-xl font-semibold text-[#14235C]">
+                {feature.title}
               </h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-xl">
-                {item.description}
+              <p className="mt-3 text-sm leading-6 text-gray-600">
+                {feature.description}
               </p>
-            </div>
-          </div>
-        ))}
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );
