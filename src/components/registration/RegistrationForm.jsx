@@ -126,6 +126,7 @@ export default function RegistrationForm() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const inputProps = (name) => ({
     id: name,
@@ -170,13 +171,31 @@ export default function RegistrationForm() {
     }
 
     setIsSubmitting(true);
+    setSubmitError("");
 
-    // TODO: Replace this local confirmation with a request to the registration backend.
-    await new Promise((resolve) => window.setTimeout(resolve, 400));
+    try {
+      const response = await fetch("/api/registration", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json().catch(() => ({}));
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData(initialFormData);
+      if (!response.ok) {
+        throw new Error(result.message || "Unable to submit your registration.");
+      }
+
+      setIsSubmitted(true);
+      setFormData(initialFormData);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Unable to submit your registration. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (isSubmitted) {
@@ -190,7 +209,7 @@ export default function RegistrationForm() {
             Registration received
           </h1>
           <p className="mx-auto mt-3 max-w-md leading-relaxed text-gray-600">
-            Your registration details have been validated successfully. Online submission will be available once backend integration is complete.
+            Your details were saved successfully. Our team will contact you if a suitable opportunity is available.
           </p>
           <button
             type="button"
@@ -371,6 +390,11 @@ export default function RegistrationForm() {
             <p className="mb-4 text-xs leading-relaxed text-gray-500">
               Fields marked with <span className="text-orange-500">*</span> are required.
             </p>
+            {submitError && (
+              <p className="mb-4 text-sm text-red-600" role="alert" aria-live="polite">
+                {submitError}
+              </p>
+            )}
             <button
               type="submit"
               disabled={isSubmitting}
