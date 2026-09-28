@@ -16,6 +16,7 @@ const fieldLimits = {
   state: 80,
   pinCode: 6,
   jobRole: 50,
+  trainingCenter: 100,
   expectedSalary: 20,
   yearsOfExperience: 10,
   preferredWorkLocation: 120,
@@ -33,6 +34,7 @@ const requiredFields = [
   "state",
   "pinCode",
   "jobRole",
+  "trainingCenter",
   "expectedSalary",
 ];
 
@@ -42,6 +44,11 @@ const allowedJobRoles = new Set([
   "Baby Care",
   "Home Care",
   "Japa Care",
+]);
+
+const allowedTrainingCenters = new Set([
+  "PATNA, BIHAR TC code : STFBLHR-01",
+  "JHARKAND TC code : STFBLHR-02",
 ]);
 
 function cleanRegistration(body) {
@@ -66,6 +73,7 @@ function isValidRegistration(data) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return false;
   if (!/^\d{6}$/.test(data.pinCode)) return false;
   if (!allowedJobRoles.has(data.jobRole)) return false;
+  if (!allowedTrainingCenters.has(data.trainingCenter)) return false;
   if (!Number.isFinite(Number(data.expectedSalary)) || Number(data.expectedSalary) <= 0) return false;
   if (data.yearsOfExperience && Number(data.yearsOfExperience) < 0) return false;
 

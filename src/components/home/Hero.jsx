@@ -36,7 +36,7 @@ const imageVariant = {
 
 export default function Hero() {
   return (
-    <section className="bg-white px-6 overflow-hidden">
+    <section className="bg-[#FCFBFD] px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 min-h-[70vh] items-center">
 
 
@@ -110,11 +110,12 @@ export default function Hero() {
           className="md:flex items-end justify-center md:justify-end hidden"
         >
           <Image
-            src="/images/Hero.png"
+            src="/images/Hero.gif"
             alt="Healthcare at Home"
             width={1200}
             height={1200}
             priority
+            unoptimized
             className="hidden md:flex items-end justify-center md:justify-end"
           />
         </motion.div>

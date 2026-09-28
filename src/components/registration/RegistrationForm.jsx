@@ -25,6 +25,7 @@ const initialFormData = {
   state: "",
   pinCode: "",
   jobRole: "",
+  trainingCenter: "",
   expectedSalary: "",
   yearsOfExperience: "",
   preferredWorkLocation: "",
@@ -78,6 +79,9 @@ const validateField = (name, value) => {
     if (!/^\d{6}$/.test(trimmedValue)) return "PIN code must contain 6 digits.";
   }
   if (name === "jobRole" && !trimmedValue) return "Please select a job role.";
+  if (name === "trainingCenter" && !trimmedValue) {
+    return "Please select a training centre.";
+  }
   if (name === "expectedSalary") {
     if (!trimmedValue) return "Please enter your expected salary.";
     if (Number(trimmedValue) <= 0) return "Expected salary must be greater than 0.";
@@ -231,7 +235,7 @@ export default function RegistrationForm() {
             Careers at Medclover
           </p>
           <h1 className="mt-3 text-4xl font-semibold text-[#14235C] font-labrada sm:text-5xl">
-            Registration Form
+            Job Registration
           </h1>
           <div className="mt-4 flex justify-center" aria-hidden="true">
             <span className="h-[3px] w-12 rounded-full bg-orange-500" />
@@ -359,6 +363,17 @@ export default function RegistrationForm() {
             </fieldset>
 
             <div className="mt-5 grid grid-cols-1 gap-x-5 gap-y-5 sm:grid-cols-2">
+              <Field label="Training Centre" name="trainingCenter" error={errors.trainingCenter} required className="sm:col-span-2">
+                <select {...inputProps("trainingCenter")} className="input">
+                  <option value="">Select training centre</option>
+                  <option value="PATNA, BIHAR TC code : STFBLHR-01">
+                    PATNA, BIHAR TC code : STFBLHR-01
+                  </option>
+                  <option value="JHARKAND TC code : STFBLHR-02">
+                    JHARKAND TC code : STFBLHR-02
+                  </option>
+                </select>
+              </Field>
               <Field label="Expected Salary" name="expectedSalary" error={errors.expectedSalary} required>
                 <div className="relative">
                   <IndianRupee className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={17} aria-hidden="true" />

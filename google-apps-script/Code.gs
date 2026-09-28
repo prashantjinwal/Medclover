@@ -17,6 +17,7 @@ const HEADERS = [
   "State",
   "PIN Code",
   "Job Role",
+  "Training Centre",
   "Expected Salary",
   "Years of Experience",
   "Preferred Work Location",
@@ -33,7 +34,7 @@ function doPost(event) {
     const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
     let sheet = spreadsheet.getSheetByName(SHEET_NAME);
     if (!sheet) sheet = spreadsheet.insertSheet(SHEET_NAME);
-    if (sheet.getLastRow() === 0) sheet.appendRow(HEADERS);
+    ensureHeaders(sheet);
 
     sheet.appendRow([
       new Date(),
@@ -52,6 +53,7 @@ function doPost(event) {
       safeCell(data.state),
       safeCell(data.pinCode),
       safeCell(data.jobRole),
+      safeCell(data.trainingCenter),
       safeCell(data.expectedSalary),
       safeCell(data.yearsOfExperience),
       safeCell(data.preferredWorkLocation),
@@ -65,6 +67,33 @@ function doPost(event) {
   } finally {
     if (lock.hasLock()) lock.releaseLock();
   }
+}
+
+function ensureHeaders(sheet) {
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(HEADERS);
+    return;
+  }
+
+  const currentHeaders = sheet
+    .getRange(1, 1, 1, sheet.getLastColumn())
+    .getDisplayValues()[0]
+    .map((header) => String(header).trim());
+  const trainingCenterExists = currentHeaders.some(
+    (header) => header === "Training Centre" || header === "Training Center",
+  );
+
+  // Migrate sheets created before the Training Centre field was introduced.
+  // Inserting the column preserves the alignment of all existing registration data.
+  if (!trainingCenterExists) {
+    const jobRoleColumn = currentHeaders.indexOf("Job Role") + 1;
+    if (jobRoleColumn === 0) {
+      throw new Error('Could not find the "Job Role" column.');
+    }
+    sheet.insertColumnAfter(jobRoleColumn);
+  }
+
+  sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
 }
 
 function safeCell(value) {
