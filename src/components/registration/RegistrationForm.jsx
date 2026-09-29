@@ -14,6 +14,8 @@ const initialFormData = {
   fatherName: "",
   motherName: "",
   dateOfBirth: "",
+  height: "",
+  weight: "",
   contactNumber: "",
   emergencyContactNumber: "",
   email: "",
@@ -48,6 +50,18 @@ const validateField = (name, value) => {
   if (name === "dateOfBirth") {
     if (!trimmedValue) return "Please select your date of birth.";
     if (new Date(trimmedValue) > new Date()) return "Date of birth cannot be in the future.";
+  }
+  if (name === "height") {
+    if (!trimmedValue) return "Please enter your height.";
+    if (!Number.isFinite(Number(trimmedValue)) || Number(trimmedValue) <= 0) {
+      return "Height must be greater than 0.";
+    }
+  }
+  if (name === "weight") {
+    if (!trimmedValue) return "Please enter your weight.";
+    if (!Number.isFinite(Number(trimmedValue)) || Number(trimmedValue) <= 0) {
+      return "Weight must be greater than 0.";
+    }
   }
   if (name === "contactNumber") {
     if (!trimmedValue) return "Please enter your contact number.";
@@ -263,6 +277,12 @@ export default function RegistrationForm() {
               </Field>
               <Field label="Date of Birth" name="dateOfBirth" error={errors.dateOfBirth} required>
                 <input {...inputProps("dateOfBirth")} type="date" max={maxDateOfBirth} className="input" />
+              </Field>
+              <Field label="Height (cm)" name="height" error={errors.height} required>
+                <input {...inputProps("height")} type="number" inputMode="decimal" min="1" step="0.1" placeholder="Enter height in cm" className="input" />
+              </Field>
+              <Field label="Weight (kg)" name="weight" error={errors.weight} required>
+                <input {...inputProps("weight")} type="number" inputMode="decimal" min="1" step="0.1" placeholder="Enter weight in kg" className="input" />
               </Field>
               <Field label="Father's Name" name="fatherName" error={errors.fatherName}>
                 <input {...inputProps("fatherName")} type="text" placeholder="Enter father's name" className="input" />

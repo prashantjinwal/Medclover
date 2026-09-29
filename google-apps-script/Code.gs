@@ -6,6 +6,8 @@ const HEADERS = [
   "Father's Name",
   "Mother's Name",
   "Date of Birth",
+  "Height (cm)",
+  "Weight (kg)",
   "Contact Number",
   "Emergency Contact Number",
   "Email",
@@ -42,6 +44,8 @@ function doPost(event) {
       safeCell(data.fatherName),
       safeCell(data.motherName),
       safeCell(data.dateOfBirth),
+      safeCell(data.height),
+      safeCell(data.weight),
       safeCell(data.contactNumber),
       safeCell(data.emergencyContactNumber),
       safeCell(data.email),
@@ -75,10 +79,33 @@ function ensureHeaders(sheet) {
     return;
   }
 
-  const currentHeaders = sheet
-    .getRange(1, 1, 1, sheet.getLastColumn())
-    .getDisplayValues()[0]
-    .map((header) => String(header).trim());
+  function getCurrentHeaders() {
+    return sheet
+      .getRange(1, 1, 1, sheet.getLastColumn())
+      .getDisplayValues()[0]
+      .map((header) => String(header).trim());
+  }
+
+  let currentHeaders = getCurrentHeaders();
+  const dateOfBirthColumn = currentHeaders.indexOf("Date of Birth") + 1;
+  if (dateOfBirthColumn === 0) {
+    throw new Error('Could not find the "Date of Birth" column.');
+  }
+
+  // Preserve existing rows while adding the new physical-detail columns.
+  if (!currentHeaders.includes("Height (cm)")) {
+    sheet.insertColumnAfter(dateOfBirthColumn);
+    sheet.getRange(1, dateOfBirthColumn + 1).setValue("Height (cm)");
+  }
+
+  currentHeaders = getCurrentHeaders();
+  if (!currentHeaders.includes("Weight (kg)")) {
+    const heightColumn = currentHeaders.indexOf("Height (cm)") + 1;
+    sheet.insertColumnAfter(heightColumn);
+    sheet.getRange(1, heightColumn + 1).setValue("Weight (kg)");
+  }
+
+  currentHeaders = getCurrentHeaders();
   const trainingCenterExists = currentHeaders.some(
     (header) => header === "Training Centre" || header === "Training Center",
   );

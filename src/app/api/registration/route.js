@@ -5,6 +5,8 @@ const fieldLimits = {
   fatherName: 100,
   motherName: 100,
   dateOfBirth: 10,
+  height: 10,
+  weight: 10,
   contactNumber: 20,
   emergencyContactNumber: 20,
   email: 254,
@@ -26,6 +28,8 @@ const fieldLimits = {
 const requiredFields = [
   "fullName",
   "dateOfBirth",
+  "height",
+  "weight",
   "contactNumber",
   "email",
   "qualification",
@@ -71,6 +75,8 @@ function isValidRegistration(data) {
     !/^(?:\+91)?[6-9]\d{9}$/.test(data.emergencyContactNumber.replace(/[\s-]/g, ""))
   ) return false;
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return false;
+  if (!Number.isFinite(Number(data.height)) || Number(data.height) <= 0) return false;
+  if (!Number.isFinite(Number(data.weight)) || Number(data.weight) <= 0) return false;
   if (!/^\d{6}$/.test(data.pinCode)) return false;
   if (!allowedJobRoles.has(data.jobRole)) return false;
   if (!allowedTrainingCenters.has(data.trainingCenter)) return false;
